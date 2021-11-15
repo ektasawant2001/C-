@@ -1,47 +1,20 @@
-//MULTILEVEL INHERITANCE
- #include<iostream>
+#include<iostream>
 using namespace std;
-class A
-{
-public:
-    int x;
- void getdata()
-  {
-     cout<<"Enter value of x:";
-     cin>>x;
-  }
+class MyClass {
+  public:
+    void myFunction() {
+      cout << "We are GRAND-PARENTS "<<endl; ;
+    }
 };
-class B:public A
-{
-public:
-    int y;
-   void readdata()
-   {
-     cout<<"Enter value of y:";
-     cin>>y;
-   }
+class MyChild: public MyClass {
+
 };
-class C:public B
-{
-private:
-    int z;
-public:
-   void indata()
-   {
-      cout<<"Enter value of z:";
-      cin>>z;
-   }
-   void product()
-   {
-      cout<<"\nProduct:"<<x*y*z;
-   }
+class MyGrandChild: public MyChild {
+
 };
-int main()
-{
-   C c;
-   c.getdata();
-   c.readdata();
-   c.indata();
-   c.product();
-   return 0;
+
+int main() {
+  MyGrandChild myObj;
+  myObj.myFunction();
+  return 0;
 }

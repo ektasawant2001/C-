@@ -1,39 +1,24 @@
-// multiple inheritance
-#include <iostream>
+#include<iostream>
 using namespace std;
-class A
-{
- 	public:
- 	int x;
- 	void getx()
-    {
- 	    cout << "enter value of x: ";
- 	    cin >> x;
+class MyClass {
+  public:
+    void myFunction() {
+      cout << "************ Hi Everyone ************ "<<endl; ;
     }
 };
-class B
-{
- 	public:
- 	int y;
- 	void gety()
- 	{
- 	    cout << "enter value of y: ";
- 	    cin >> y;
- 	}
+class MyOtherClass {
+  public:
+    void myOtherFunction() {
+      cout << "!!!!!!!!!!!! Keep Smiling !!!!!!!!!!!!" ;
+    }
 };
-class C : public A, public B
-{
- 	public:
- 	void sum()
- 	{
- 	    cout << "Sum = " << x + y;
- 	}
+
+class MyChildClass: public MyClass, public MyOtherClass {
 };
-int main()
-{
- 	 C obj1;
- 	 obj1.getx();
- 	 obj1.gety();
- 	 obj1.sum();
- 	 return 0;
+
+int main() {
+  MyChildClass myObj;
+  myObj.myFunction();
+  myObj.myOtherFunction();
+  return 0;
 }
